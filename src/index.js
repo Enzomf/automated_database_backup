@@ -1,13 +1,4 @@
-import 'dotenv/config'
-import make_backup from './lib/backup.js'
+import "dotenv/config";
+import scheduele_backup from "./lib/schedule_backup.js";
 
-
-
-
-await make_backup()
-
-
-
-
-
-
+scheduele_backup();
