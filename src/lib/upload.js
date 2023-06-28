@@ -15,9 +15,8 @@ firebase_admin.initializeApp({
 const bucket = firebase_admin.storage().bucket();
 
 async function make_upload(filename, filepath) {
-  // Implemente o código para fazer o upload do arquivo para o Firebase Storage aqui
+  
   await bucket.upload(filepath)
-
 }
 
 export default make_upload;

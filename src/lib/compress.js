@@ -5,7 +5,7 @@ import sendDiscordMessage from "../functions/send_message.js";
 import removeSqlFile from "../functions/remove_sql_file.js";
 import make_upload from './upload.js'
 
-async function compressFile(filePath) {
+async function compressFile(filePath, filename) {
   const gzip = zlib.createGzip();
   const readStream = createReadStream(filePath);
   const writeStream = createWriteStream(filePath + ".gz");
@@ -22,7 +22,7 @@ async function compressFile(filePath) {
 
   readStream.on("close", async () => {
     await removeSqlFile(filePath)
-    await make_upload('', filePath +'.gz')
+    await make_upload(filename, filePath +'.gz')
   });
 }
 

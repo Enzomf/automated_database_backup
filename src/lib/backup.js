@@ -30,9 +30,7 @@ async function makeBackup() {
       dumpToFile: backupPath,
     });
 
-    await compressFile(backupPath);
-
-
+    await compressFile(backupPath, filename);
    
     await sendDiscordMessage("success", {
       title: "Backup realizado com sucesso!",
